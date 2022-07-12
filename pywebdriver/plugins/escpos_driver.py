@@ -11,13 +11,14 @@ from configparser import NoOptionError
 import usb.core
 from flask import jsonify, render_template, request
 from netifaces import AF_INET, ifaddresses, interfaces
+
 from xmlescpos import Layout
 
 from pywebdriver import app, config, drivers
 
 from .base_driver import ThreadDriver
 
-ENODEV = errno.__dict__.get('ENODEV', None),
+ENODEV = (errno.__dict__.get("ENODEV", None),)
 
 meta = {
     "name": "ESCPOS Printer",
